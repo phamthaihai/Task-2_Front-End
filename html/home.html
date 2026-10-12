@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="home-page-body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+        <a class="navbar-brand fw-bold" href="home.html">Management System</a>
+        <div class="ms-auto dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Home</button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="index.html">Home</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container py-5 home-content">
+        <div class="welcome-banner">
+            <h1>Welcome to My Website</h1>
+            <p>Learn web development with our courses.</p>
+        </div>
+
+        <h3 class="home-section-title">Our Courses</h3>
+
+        <div class="row g-4 course-grid">
+            <div class="col-md-6">
+                <div class="course-card course-html" onclick="showCourse('HTML', 'HTML stands for HyperText Markup Language. It creates the structure of a web page using headings, paragraphs, images, and links.')">
+                    <h4>HTML</h4>
+                    <p>Learn how to create the structure of web pages using headings, paragraphs, images, and links.</p>
+                    <button class="btn btn-custom btn-html">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="course-card course-css" onclick="showCourse('CSS', 'CSS stands for Cascading Style Sheets. It controls the appearance of web pages, including colors, fonts, spacing, and layouts.')">
+                    <h4>CSS</h4>
+                    <p>Learn how to style web pages with colors, fonts, spacing, and attractive layouts.</p>
+                    <button class="btn btn-custom btn-css">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="course-card course-bootstrap" onclick="showCourse('Bootstrap', 'Bootstrap is a powerful CSS framework designed to help build responsive, mobile-first websites quickly and efficiently.')">
+                    <h4>Bootstrap</h4>
+                    <p>Build responsive websites quickly using Bootstrap's grid system and components.</p>
+                    <button class="btn btn-custom btn-bootstrap">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="course-card course-js" onclick="showCourse('JavaScript', 'JavaScript is a programming language that makes web pages interactive. It can handle button clicks, form validation, and dynamic content.')">
+                    <h4>JavaScript</h4>
+                    <p>Make web pages interactive with button clicks, form validation, and dynamic content.</p>
+                    <button class="btn btn-custom btn-js">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-home text-center">
+        <p class="mb-0">Copyright 2026 Management System</p>
+    </footer>
+
+    <div class="modal fade" id="courseModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalCourseTitle">Course Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalCourseDesc">Nội dung chi tiết khóa học...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showCourse(title, description) {
+            document.getElementById("modalCourseTitle").innerText = title;
+            document.getElementById("modalCourseDesc").innerText = description;
+
+            var myModal = new bootstrap.Modal(document.getElementById('courseModal'));
+            myModal.show();
+        }
+    </script>
+</body>
+</html>
